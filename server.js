@@ -26,7 +26,6 @@ connectToMongo();
 app.post("/signup", async (req, res) => {
     const { FirstName, MiddleName, LastName, email, password, role } = req.body;
 
-    
     const checkEmail = await User.findOne({ email: email })
     // if email already exists in the database
     if (checkEmail) {
